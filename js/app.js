@@ -50,10 +50,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-let sum = (a,b,c);
-let multiply = (a,b,c);
-return[sum, `${a} and ${b} and ${c} sum to ${sum}.`];
-return[multiply, `The product of ${a} and ${b} and ${c} is ${multiply}.`];
+let plus = sum(a,b)[0];
+let plus2 = sum(plus,c)[0];
+let product = multiply(a,b)[0];
+let product2 = multiply(product,c)[0];
+
+return[plus2,product2,`${a} and ${b} and ${c} sum to ${plus2}.`,`The product of ${a} and ${b} and ${c} is ${product2}.`];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
