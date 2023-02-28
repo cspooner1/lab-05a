@@ -9,8 +9,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-let sum = a + b;
-return[sum, `The sum of ${a} and ${b} is ${sum}.`];
+    let sum = a + b;
+    return [sum, `The sum of ${a} and ${b} is ${sum}.`];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -28,12 +28,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-let multiply = a * b;
-return[multiply, `The product of ${a} and ${b} is ${multiply}.`];
+    let multiply = a * b;
+    return [multiply, `The product of ${a} and ${b} is ${multiply}.`];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -50,16 +50,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-let plus = sum(a,b)[0];
-let plus2 = sum(plus,c)[0];
-let product = multiply(a,b)[0];
-let product2 = multiply(product,c)[0];
+    let plus = sum(a, b)[0];
+    let plus2 = sum(plus, c)[0];
+    let product = multiply(a, b)[0];
+    let product2 = multiply(product, c)[0];
 
-return[plus2,product2,`${a} and ${b} and ${c} sum to ${plus2}.`,`The product of ${a} and ${b} and ${c} is ${product2}.`];
+    return [plus2, product2, `${a} and ${b} and ${c} sum to ${plus2}.`, `The product of ${a} and ${b} and ${c} is ${product2}.`];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -77,12 +77,22 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    // console.log(sumArr);
+    let Total = 0;
+    for (let number in sumArr){
+        Total = sum(sumArr[number],Total)[  0];
+        // console.log(sumArr[sum(number), Total]);
+    }
+return [Total, `${sumArr} was passed in as an array of numbers, and ${Total} is their sum.`];
+// console.log(Total);
 }
+
+
+sumArray(testArray)
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -98,11 +108,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    console.log(multArr)
+    let Total = 1;
+    for (let number in multArr){
+        Total = multiply(multArr[number],Total)[0];
+        // console.log(multArr[multiply(number), Total]);
+    }
+    console.log("Total", Total);
 
-}
+    return[Total,`The numbers ${multArr} have a product of ${Total}.`];
+    }
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -123,13 +142,20 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    let Total = 1;
+    for (let number in dynamicArray){
+        Total = multiply(dynamicArray[number],Total)[0];
+        // console.log(dynamicArray[multiply(number), Total]);
+    }
+    console.log("Total", Total);
 
-}
+    return[Total,`The numbers ${dynamicArray} have a product of ${Total}.`];
+    }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
